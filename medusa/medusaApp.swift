@@ -11,7 +11,7 @@ import SwiftUI
 struct medusaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchScreen()
         }
     }
 }
