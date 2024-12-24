@@ -14,7 +14,7 @@ struct LaunchScreen: View {
     var body: some View {
         
         if isActive{
-            LoginAndRegisterView()
+            LoginView()
         }else{
             
             ZStack{

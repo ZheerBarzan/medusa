@@ -27,11 +27,3 @@ struct SquareTile: View {
     }
 }
 
-#Preview {
-    SquareTile(imagePath: "Medusa", onTap: {})
-    SquareTile(imagePath: "MS", onTap: {})
-    SquareTile(imagePath: "Apple", onTap: {})
-    SquareTile(imagePath: "Google", onTap: {})
-
-    
-}

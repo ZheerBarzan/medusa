@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FACFAA012D1B252E00825C53 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FACFAA002D1B252E00825C53 /* FirebaseAuth */; };
+		FACFAA032D1B252E00825C53 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FACFAA022D1B252E00825C53 /* FirebaseCore */; };
+		FACFAA052D1B252E00825C53 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FACFAA042D1B252E00825C53 /* FirebaseDatabase */; };
+		FACFAA072D1B252E00825C53 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FACFAA062D1B252E00825C53 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		FACFA9692D19D08100825C53 /* medusa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = medusa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACFAA052D1B252E00825C53 /* FirebaseDatabase in Frameworks */,
+				FACFAA072D1B252E00825C53 /* FirebaseFirestore in Frameworks */,
+				FACFAA032D1B252E00825C53 /* FirebaseCore in Frameworks */,
+				FACFAA012D1B252E00825C53 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +76,10 @@
 			);
 			name = medusa;
 			packageProductDependencies = (
+				FACFAA002D1B252E00825C53 /* FirebaseAuth */,
+				FACFAA022D1B252E00825C53 /* FirebaseCore */,
+				FACFAA042D1B252E00825C53 /* FirebaseDatabase */,
+				FACFAA062D1B252E00825C53 /* FirebaseFirestore */,
 			);
 			productName = medusa;
 			productReference = FACFA9692D19D08100825C53 /* medusa.app */;
@@ -94,6 +109,9 @@
 			);
 			mainGroup = FACFA9602D19D08100825C53;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FACFA9FF2D1B252E00825C53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FACFA96A2D19D08100825C53 /* Products */;
 			projectDirPath = "";
@@ -255,6 +273,8 @@
 				DEVELOPMENT_TEAM = WL2KNG8MVT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Medusa;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -265,7 +285,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.medusa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProjectMedusa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -284,6 +304,8 @@
 				DEVELOPMENT_TEAM = WL2KNG8MVT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Medusa;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,7 +316,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.medusa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ProjectMedusa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -324,6 +346,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FACFA9FF2D1B252E00825C53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FACFAA002D1B252E00825C53 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FACFA9FF2D1B252E00825C53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FACFAA022D1B252E00825C53 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FACFA9FF2D1B252E00825C53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		FACFAA042D1B252E00825C53 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FACFA9FF2D1B252E00825C53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		FACFAA062D1B252E00825C53 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FACFA9FF2D1B252E00825C53 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FACFA9612D19D08100825C53 /* Project object */;
 }
