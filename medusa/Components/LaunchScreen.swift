@@ -20,7 +20,7 @@ struct LaunchScreen: View {
             ZStack{
                 Color.white
                     .ignoresSafeArea()
-                Image("Luanch")
+                Image("Medusa")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)
