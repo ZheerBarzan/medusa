@@ -4,49 +4,54 @@
 //
 //  Created by Zheer Barzan on 25/12/24.
 //
-
-import Foundation
 import Foundation
 import FirebaseAuth
-import Combine
+
 
 class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var errorMessage: String? = nil
     @Published var isLoggedIn: Bool = false
-    @Published var showRegisterView: Bool = false
+    @Published var navigationState: NavigationState = .login
     
-    private var cancellables = Set<AnyCancellable>()
+    private var authStateListenerHandle: AuthStateDidChangeListenerHandle?
+
+    enum NavigationState {
+        case login
+        case register
+        case home
+    }
     
-    // Authentication logic for login
-    func loginUser() {
-        guard !email.isEmpty, !password.isEmpty else {
-            errorMessage = "Please fill in all fields."
-            return
+    func addAuthStateListener() {
+        authStateListenerHandle = Auth.auth().addStateDidChangeListener { _, user in
+            self.isLoggedIn = user != nil
+            self.navigationState = user != nil ? .home : .login
         }
-        
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+    }
+    
+    func removeAuthStateListener() {
+        if let handle = authStateListenerHandle {
+            Auth.auth().removeStateDidChangeListener(handle)
+        }
+    }
+    
+    func loginUser() {
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
             if let error = error {
                 self.errorMessage = error.localizedDescription
             } else {
                 self.isLoggedIn = true
-                print("User logged in successfully")
+                self.navigationState = .home
             }
         }
     }
     
-    // Firebase Auth state listener
-    func addAuthStateListener() {
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if user != nil {
-                self.isLoggedIn = true
-            }
-        }
-    }
-    
-    // Register View navigation
     func navigateToRegisterView() {
-        self.showRegisterView = true
+        navigationState = .register
+    }
+    
+    func navigateToLoginView() {
+        navigationState = .login
     }
 }
