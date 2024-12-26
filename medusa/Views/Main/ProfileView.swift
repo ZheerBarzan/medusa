@@ -8,7 +8,8 @@
 import SwiftUI
 import FirebaseAuth
 struct ProfileView: View {
-    @Binding var isLoggedIn: Bool // Bind the login state to navigate when logged out
+    @Binding var isLoggedIn: Bool// Bind the login state to navigate when logged out
+    @StateObject private var profileViewModel = ProfileViewModel() // ViewModel for Login
 
     var body: some View {
         VStack {
@@ -21,7 +22,7 @@ struct ProfileView: View {
 
             // Logout Button
             Button(action: {
-                logoutUser()
+                profileViewModel.logoutUser()
             }, label: {
                 Text("Logout")
                     .font(.system(.headline, design: .monospaced))
@@ -38,17 +39,7 @@ struct ProfileView: View {
         .padding()
     }
     
-    func logoutUser() {
-        // Logout the user using Firebase Auth
-        do {
-            try Auth.auth().signOut()
-            // Set isLoggedIn to false to go back to the login screen
-            isLoggedIn = false
-            print("User logged out successfully")
-        } catch let error {
-            print("Error logging out: \(error.localizedDescription)")
-        }
-    }
+    
 }
 
 

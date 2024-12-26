@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CameraView: View {
+    @StateObject var cameraViewModel = CameraViewModel()
     
     var body: some View {
         Text("Camera")

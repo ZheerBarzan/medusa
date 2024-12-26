@@ -29,7 +29,6 @@ struct HomeScreenView: View {
 
                 }.tag(2)
         }.accentColor(.black)
-            
     }
     
   

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @StateObject var libraryViewModel = LibraryViewModel()
     var body: some View {
         Text("Library")
             .font(.system(.title, design: .monospaced))
