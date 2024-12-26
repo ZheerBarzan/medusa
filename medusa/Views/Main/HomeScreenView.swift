@@ -5,44 +5,34 @@ struct HomeScreenView: View {
     @Binding var isLoggedIn: Bool // Bind the login state to navigate when logged out
 
     var body: some View {
-        VStack {
-            // Home screen content
-            Text("Home Screen")
-                .font(.system(.title, design: .monospaced))
-                .foregroundColor(.black)
+    
+        TabView{
+            LibraryView()
+                .tabItem {
+                    Image(systemName: "book")
+                    Text("Library")
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
 
-            Spacer()
+                }.tag(0)
+            CameraView()
+                .tabItem {
+                    Image(systemName: "camera")
+                    Text("Camera")
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
 
-            // Logout Button
-            Button(action: {
-                logoutUser()
-            }, label: {
-                Text("Logout")
-                    .font(.system(.headline, design: .monospaced))
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.black)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-            })
+                }.tag(1)
+            ProfileView(isLoggedIn: $isLoggedIn)
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                        .font(.system(size: 14, weight: .bold, design: .monospaced))
 
-            Spacer()
-        }
-        .padding()
+                }.tag(2)
+        }.accentColor(.black)
+            
     }
     
-    func logoutUser() {
-        // Logout the user using Firebase Auth
-        do {
-            try Auth.auth().signOut()
-            // Set isLoggedIn to false to go back to the login screen
-            isLoggedIn = false
-            print("User logged out successfully")
-        } catch let error {
-            print("Error logging out: \(error.localizedDescription)")
-        }
-    }
+  
 }
 
 #Preview {
