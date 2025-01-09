@@ -72,7 +72,7 @@ struct RegisterView: View {
             }
             
             Text("Or Continue With")
-            HStack {
+            HStack(spacing: 20) {
                 SquareTile(imagePath: "Apple", onTap: { print("Apple Sign-In") })
                 SquareTile(imagePath: "Google", onTap: { print("Google Sign-In") })
                 SquareTile(imagePath: "MS", onTap: { print("Microsoft Sign-In") })

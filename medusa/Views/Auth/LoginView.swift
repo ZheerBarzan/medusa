@@ -82,12 +82,7 @@ struct LoginView: View {
                 })
             }
             
-            Text("Or Continue With")
-            HStack {
-                SquareTile(imagePath: "Apple", onTap: { print("Apple Sign-In") })
-                SquareTile(imagePath: "Google", onTap: { print("Google Sign-In") })
-                SquareTile(imagePath: "MS", onTap: { print("Microsoft Sign-In") })
-            }
+           
             Spacer()
         }
         .padding(.top)

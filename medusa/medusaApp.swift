@@ -16,7 +16,7 @@ struct medusaApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            LaunchScreen()
+            LaunchScreen().preferredColorScheme(.light)
         }
     }
 }

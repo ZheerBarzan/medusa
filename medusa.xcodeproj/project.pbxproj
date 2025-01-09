@@ -17,9 +17,22 @@
 		FACFA9692D19D08100825C53 /* medusa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = medusa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FA30E4912D303C8B00E87A88 /* Exceptions for "medusa" folder in "medusa" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FACFA9682D19D08100825C53 /* medusa */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FACFA96B2D19D08100825C53 /* medusa */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FA30E4912D303C8B00E87A88 /* Exceptions for "medusa" folder in "medusa" target */,
+			);
 			path = medusa;
 			sourceTree = "<group>";
 		};
@@ -273,6 +286,7 @@
 				DEVELOPMENT_TEAM = WL2KNG8MVT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = medusa/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Medusa;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -304,6 +318,7 @@
 				DEVELOPMENT_TEAM = WL2KNG8MVT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = medusa/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Medusa;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
