@@ -19,7 +19,6 @@ class LoginViewModel: ObservableObject {
 
     enum NavigationState {
         case login
-        case register
         case home
     }
     
@@ -45,10 +44,6 @@ class LoginViewModel: ObservableObject {
                 self.navigationState = .home
             }
         }
-    }
-    
-    func navigateToRegisterView() {
-        navigationState = .register
     }
     
     func navigateToLoginView() {
